@@ -2,18 +2,11 @@ package com.mvc.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpServerErrorException;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
+
 import com.mvc.mapper.TripInfoMapper;
 import com.mvc.vo.TripInfo;
 
@@ -25,6 +18,24 @@ public class TripInfoServiceImpl implements TripInfoService{
 	@Override
 	public List<TripInfo> getInfoAll() {
 		return mapper.getInfoAll();
+	}
+
+	@Override
+	public List<TripInfo> searchContentTypeId(String contentTypeId) {
+		return mapper.searchContentTypeId(contentTypeId);
+	}
+
+	@Override
+	public List<TripInfo> searchArea(int sidocode, int guguncode) {
+		Map<String, Integer> map = new HashMap<>();
+		map.put("sidocode", sidocode);
+		map.put("guguncode", guguncode);
+		return mapper.searchArea(map);
+	}
+
+	@Override
+	public List<TripInfo> searchTitle(String word) {
+		return mapper.searchTitle(word);
 	}
 	
 	

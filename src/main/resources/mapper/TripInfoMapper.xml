@@ -9,6 +9,16 @@
 		select * from attraction_info
 	</select>
 
+	<select id="searchContentTypeId" resultType="TripInfo" parameterType="String">
+		select * from attraction_info where content_type_id = #{contentTypeId}
+	</select>
 	
-
+	<select id="searchArea" resultType="TripInfo" parameterType="Map">
+		select * from attraction_info where sido_code=#{sidocode} and gugun_code=#{guguncode}
+	</select>
+	
+	<select id="searchTitle" resultType="TripInfo" parameterType="String">
+		select * from attraction_info where title like concat('%',#{word},'%')
+	</select>
+	
 </mapper>
