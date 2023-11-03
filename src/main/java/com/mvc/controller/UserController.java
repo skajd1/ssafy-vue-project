@@ -68,7 +68,7 @@ public class UserController {
 			session.setAttribute("user", u);
 			msg = "로그인 성공";
 		}
-		msg = "ID / PW 를 확인해주세요.";
+		else msg = "ID / PW 를 확인해주세요.";
 		return msg;
 	}
 	@PostMapping(value = "/user/logout")
