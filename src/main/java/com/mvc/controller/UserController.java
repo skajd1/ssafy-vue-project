@@ -38,7 +38,6 @@ public class UserController {
 	@ApiOperation(value = "전체 유저 리스트",notes = "어드민전용으로 전체 유저 리스트 호출할 때 사용")
 	@GetMapping(value = "/user")
 	public ArrayList<User> getAllUser() {
-		
 		return us.selectAll();
 	}
 	@ApiOperation(value = "회원가입",notes = "User 객체를 파라미터로 받아서 회원가입 성공하면 '가입 성공' 메세지 반환 실패하면 '가입 실패'")
