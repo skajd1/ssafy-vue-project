@@ -59,6 +59,12 @@ public class UserController {
 		boolean res = us.checkUser(u);
 		String msg = null;
 		if(res) {
+			if(u.isAdmin()) {
+				session.setAttribute("admin", 1);
+			}
+			else {
+				session.setAttribute("admin", 0);
+			}
 			session.setAttribute("user", u);
 			msg = "로그인 성공";
 		}
