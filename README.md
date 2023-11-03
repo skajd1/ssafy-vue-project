@@ -1,1 +1,1 @@
-## localhost/swagger-ui.html
+## http://localhost/swagger-ui.html
