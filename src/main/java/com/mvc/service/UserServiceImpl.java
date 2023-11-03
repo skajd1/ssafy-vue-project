@@ -17,28 +17,29 @@ public class UserServiceImpl implements UserService{
 	}
 	@Override
 	public ArrayList<User> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectAll();
 	}
 	@Override
 	public User selectOne(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectOne(id);
 	}
 	@Override
-	public int insert(User c) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insert(User u) {
+		return mapper.insert(u);
 	}
 	@Override
 	public int delete(String id) {
-		// TODO Auto-generated method stub
-		return 0;
+		return mapper.delete(id);
 	}
 	@Override
-	public int update(User c) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(User u) {
+		return mapper.update(u);
+	}
+	@Override
+	public boolean checkUser(User u) {
+		User res = mapper.checkUser(u);
+		if(res == null) return false;
+		return true;
 	}
 
 

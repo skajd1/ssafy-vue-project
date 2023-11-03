@@ -8,7 +8,8 @@ import com.mvc.vo.User;
 public interface UserService {
 	public ArrayList<User> selectAll();
 	public User selectOne(String id);
-	public int insert(User c);
+	public boolean checkUser(User u);
+	public int insert(User u);
 	public int delete(String id);
-	public int update(User c);
+	public int update(User u);
 }
