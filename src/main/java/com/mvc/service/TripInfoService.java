@@ -12,5 +12,11 @@ public interface TripInfoService {
 
 
 	List<TripInfo> getInfoAll();
+
+	List<TripInfo> searchContentTypeId(String contentTypeId);
+
+	List<TripInfo> searchArea(int sidocode, int guguncode);
+
+	List<TripInfo> searchTitle(String word);
 	
 }
