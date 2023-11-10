@@ -1,10 +1,8 @@
 package com.mvc.service;
 
-import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.http.ResponseEntity;
-
+import com.mvc.vo.Gugun;
 import com.mvc.vo.TripInfo;
 
 
@@ -18,5 +16,9 @@ public interface TripInfoService {
 	List<TripInfo> searchArea(int sidocode, int guguncode);
 
 	List<TripInfo> searchTitle(String word);
+
+	List<Gugun> getGugunList(String sidoCode);
+
+	List<TripInfo> searchBySidoGugunType(String sidoCode, String gugunCode, String typeId);
 	
 }

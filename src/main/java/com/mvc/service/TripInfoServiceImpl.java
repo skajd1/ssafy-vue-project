@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mvc.mapper.TripInfoMapper;
+import com.mvc.vo.Gugun;
 import com.mvc.vo.TripInfo;
 
 @Service
@@ -36,6 +37,16 @@ public class TripInfoServiceImpl implements TripInfoService{
 	@Override
 	public List<TripInfo> searchTitle(String word) {
 		return mapper.searchTitle(word);
+	}
+
+	@Override
+	public List<Gugun> getGugunList(String sidoCode) {
+		return mapper.getGugunList(sidoCode);
+	}
+
+	@Override
+	public List<TripInfo> searchBySidoGugunType(String sidoCode, String gugunCode, String typeId) {
+		return mapper.getInfoBySidoGugunType(sidoCode,gugunCode,typeId);
 	}
 	
 	
